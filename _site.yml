@@ -1,0 +1,17 @@
+name: "lab_3"
+navbar:
+  title: "Lab 3"
+  left:
+    - text: "Instruction"
+      href: index.html
+    - text: "Process"
+      href: Fertility.html
+
+output_dir: "."
+output:
+  html_document:
+    theme: cerulean
+    highlight: textmate
+    toc: true 
+    toc_float: true 
+    

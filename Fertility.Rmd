@@ -1,0 +1,112 @@
+---
+title: "Process"
+author: "yifan"
+date: "2021/2/26"
+output: html_document
+---
+
+```{r}
+library(dslabs) #install.packages("dslabs")
+library(tidyverse)
+```
+
+gdp & Fertility
+
+```{r warning=FALSE}
+gap2011 <- gapminder %>% 
+  as_tibble() %>% 
+  filter(year == 2011)
+
+ggplot(data = gap2011) +
+  geom_point(mapping = aes(x = gdp, y = fertility, color = continent))
+
+```
+
+population & Fertility
+
+```{r warning=FALSE}
+gap2011 <- gapminder %>% 
+  as_tibble() %>% 
+  filter(year == 2011)
+
+ggplot(data = gap2011) +
+  geom_label(mapping = aes(label = country, x = population, y = fertility,nudge_x = 1, nudge_y = 1,color = continent))
+
+```
+
+gdp & life_expectancy
+
+```{r warning=FALSE}
+gap2011 <- gapminder %>% 
+  as_tibble() %>% 
+  filter(year == 2011)
+
+ggplot(data = gap2011) +
+  geom_point(mapping = aes(x = gdp, y = life_expectancy, color = continent))
+
+```
+population & life_expectancy
+
+```{r warning=FALSE}
+gap2011 <- gapminder %>% 
+  as_tibble() %>% 
+  filter(year == 2011)
+
+ggplot(data = gap2011) +
+  geom_point(mapping = aes(x = population, y = life_expectancy))
+
+```
+population & life_expectancy
+
+```{r warning=FALSE}
+gap2011 <- gapminder %>% 
+  as_tibble() %>% 
+  filter(year == 2011)
+
+ggplot(data = gap2011) +
+  geom_label(mapping = aes(label = country, x = population, y = life_expectancy,nudge_x = 1, nudge_y = 1,))
+
+```
+
+gdp & infant_mortality
+
+```{r warning=FALSE}
+gap2011 <- gapminder %>% 
+  as_tibble() %>% 
+  filter(year == 2011)
+
+ggplot(data = gap2011) +
+  geom_boxplot(mapping = aes(x = gdp, y = infant_mortality, fill = continent))
+
+```
+
+fertility & infant_mortality
+
+```{r warning=FALSE}
+gap2011 <- gapminder %>% 
+  as_tibble() %>% 
+  filter(year == 2011)
+
+ggplot(data = gap2011) +
+  geom_point(mapping = aes(x = fertility, y = infant_mortality, color = continent))
+
+```
+Europe fertility
+
+```{r warning=FALSE}
+gap2011e <- gapminder %>% 
+  as_tibble() %>% 
+  group_by(continent) %>%
+  filter(year == 2011, continent == "Europe")
+
+ggplot(data = gap2011e) +
+  geom_col(mapping = aes(x = country, y = infant_mortality, fill= country))
+
+```
+
+
+
+
+
+
+
